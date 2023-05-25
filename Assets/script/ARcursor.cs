@@ -9,7 +9,7 @@ public class ARcursor : MonoBehaviour
     public GameObject OjectPortal;
     public ARRaycastManager RaycastManager;
 
-    private bool isUseCursor = true;
+    private bool isUseCursor = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +28,8 @@ public class ARcursor : MonoBehaviour
             if (isUseCursor)
             {
                 GameObject gameObject =  GameObject.Instantiate(OjectPortal, transform.position, transform.rotation);
-
                 Destroy(gameObject, 2);
+                isUseCursor = false;
             }
         }
     }

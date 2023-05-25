@@ -5,6 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] public int health;
+    [SerializeField] SlashDamage effectgetDamage;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,17 @@ public class Health : MonoBehaviour
 
     public void TakeDamge()
     {
+        Debug.Log("take Damge");
         this.health--;
+        if(effectgetDamage != null)
+        {
+            //effectgetDamage.SlashStart();   
+            StartCoroutine(effectgetDamage.Slash());
+        }
+
+        if (health < 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

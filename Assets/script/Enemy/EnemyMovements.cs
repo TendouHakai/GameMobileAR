@@ -34,21 +34,19 @@ public abstract class EnemyMovements : MonoBehaviour
             {
                 if (Vector3.Distance(transform.position, attackTarget.position) > 17.5)
                 {
-                    Debug.Log("Move inside");
                     MoveInside();
                 }
                 else {
-                    Debug.Log("Normal Movement");
                     NormalMovement();
                 }
             }
             else
             {
-                Debug.Log("Combat Movement");
                 CombatMovement();
             }
+            PerformMovement();
         }
-        PerformMovement();
+        
     }
 
     public abstract void NormalMovement();
@@ -64,7 +62,7 @@ public abstract class EnemyMovements : MonoBehaviour
         velocity = new Vector3(deltaX / max, deltaY / max, deltaZ / max).normalized * movementSpeed;
     }
 
-    public void PerformMovement()
+    public virtual void PerformMovement()
     {
         transform.LookAt(rb.position + velocity * Time.fixedDeltaTime);
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
