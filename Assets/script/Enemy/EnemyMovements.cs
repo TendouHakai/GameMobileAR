@@ -32,7 +32,7 @@ public abstract class EnemyMovements : MonoBehaviour
         {
             if (!isAttack)
             {
-                if (Vector3.Distance(transform.position, attackTarget.position) > 17.5)
+                if (Vector3.Distance(transform.position, attackTarget.position) > 15)
                 {
                     MoveInside();
                 }

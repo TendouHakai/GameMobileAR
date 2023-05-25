@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] public int health;
     [SerializeField] SlashDamage effectgetDamage;
+    [SerializeField] GameObject effectgetDead;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,10 @@ public class Health : MonoBehaviour
             StartCoroutine(effectgetDamage.Slash());
         }
 
-        if (health < 0)
+        if (health <= 0)
         {
+            GameObject effect = Instantiate(effectgetDead, transform.position, Quaternion.identity);
+            Destroy(effect ,1);
             Destroy(gameObject);
         }
     }
