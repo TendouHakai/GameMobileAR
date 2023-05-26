@@ -88,7 +88,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3247079412232546015, guid: 48f3f31724ebf6c49b15005804085954, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 48f3f31724ebf6c49b15005804085954, type: 3}
 --- !u!4 &8091006167807926015 stripped
 Transform:
@@ -150,7 +151,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: RadarWhite
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6708052038724167612, guid: bbbeb62e151dd1d44b2ca809e54c802b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bbbeb62e151dd1d44b2ca809e54c802b, type: 3}
 --- !u!4 &2807815956966431713 stripped
 Transform:
