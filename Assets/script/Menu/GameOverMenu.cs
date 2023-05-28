@@ -24,6 +24,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void CombackMainMenu()
     {
+        AudioManager.instance.StopMusic();
         SceneManager.LoadScene(0);
     }
 }

@@ -19,6 +19,7 @@ public class GameWinMenu : MonoBehaviour
 
     public void CombackMainMenu()
     {
+        AudioManager.instance.StopMusic();
         SceneManager.LoadScene(0);
     }
 }

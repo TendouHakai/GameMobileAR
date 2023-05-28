@@ -57,6 +57,7 @@ public class PlayScene : MonoBehaviour
 
     public void StartGame()
     {
+        AudioManager.instance.PlayMusic("CombatMusic");
         isStarttingGame = true;
         timeStart = 0f;
     }
