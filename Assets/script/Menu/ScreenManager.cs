@@ -75,13 +75,18 @@ public class ScreenManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         warningScreen.SetActive(false);
+
+        HubManager.instance.updateHighestScore();
         AudioManager.instance.PlaySFX("GameOver");
+        SaveLoadSystem.instance.SaveData();
     }
 
     public void GameWin()
     {
         gameWinScreen.SetActive(true);
         AudioManager.instance.PlaySFX("Win");
+        HubManager.instance.updateHighestScore();
+        SaveLoadSystem.instance.SaveData();
     }
 
     public void ResumeGame()
@@ -100,8 +105,12 @@ public class ScreenManager : MonoBehaviour
     {
         Debug.Log("Complete level " + HubManager.instance.currentlevel.ToString());
         levelCompleteScreen.SetActive(true);
+        playScreen.transform.Find("heathbarBoss").gameObject.SetActive(false);
         isComplettingLevel = true;
         timeStart = 0f;
+
+        HubManager.instance.updateCompletedLevel();
+        SaveLoadSystem.instance.SaveData();
     }
 
     public IEnumerator BossAppear()

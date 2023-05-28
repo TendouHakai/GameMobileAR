@@ -6,18 +6,23 @@ using UnityEngine;
 public class UpdateLevel : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_TextMeshPro;
+    public bool isCurrentLevel = true;
     float level;
     // Start is called before the first frame update
     void Start()
     {
-        level = HubManager.instance.currentlevel;
+        if (isCurrentLevel)
+            level = HubManager.instance.currentlevel;
+        else level = HubManager.instance.Completedlevel;
          m_TextMeshPro.text = level.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        level = HubManager.instance.currentlevel;
+        if (isCurrentLevel)
+            level = HubManager.instance.currentlevel;
+        else level = HubManager.instance.Completedlevel;
         m_TextMeshPro.text = level.ToString();
     }
 }

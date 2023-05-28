@@ -8,6 +8,7 @@ public class HubManager : MonoBehaviour
     public int currentlevel;
     public int Completedlevel;
     public int Maxlevel;
+    public int highestScore;
     public int score;
 
     private void Awake()
@@ -40,12 +41,22 @@ public class HubManager : MonoBehaviour
             currentlevel++;
             return true;
         }
-        else currentlevel = Maxlevel + 1;
-
-        if(Completedlevel < currentlevel)
-        {
-            Completedlevel = currentlevel;
-        }
         return false;
+    }
+
+    public void updateCompletedLevel()
+    {
+        if(Completedlevel < currentlevel+1) 
+        {
+            Completedlevel = currentlevel+1;
+        }
+    }
+
+    public void updateHighestScore()
+    {
+        if(highestScore < score)
+        {
+            highestScore = score;
+        }
     }
 }

@@ -10,7 +10,7 @@ public class AudioSettingMenu : MonoBehaviour
     void Start()
     {
         MusicSlider.value = AudioManager.instance.musicSource.volume;
-        SFXSlider.value = AudioManager.instance.musicSource.volume;
+        SFXSlider.value = AudioManager.instance.sfxSource.volume;
     }
 
     // Update is called once per frame
@@ -27,5 +27,10 @@ public class AudioSettingMenu : MonoBehaviour
     public void SetSFXVolume()
     {
         AudioManager.instance.SetSFXVolume(SFXSlider.value);
+    }
+
+    public void SaveAudioSetttingData()
+    {
+        SaveLoadSystem.instance.SaveData();
     }
 }
