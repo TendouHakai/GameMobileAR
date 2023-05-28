@@ -1,34 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+public class BeholderHealth : Health
 {
-    public int health;
-    public SlashDamage effectgetDamage;
-    public GameObject effectgetDead;
-    public int deadScore;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public virtual void setHealth(int health)
-    {
-        this.health = health;
-    }
-
-    public virtual void TakeDamge()
+    [SerializeField] private GameObject childFrefabs;
+    public override void TakeDamge()
     {
         this.health--;
+
         if (effectgetDamage != null)
         {
             //effectgetDamage.SlashStart();   
@@ -38,14 +18,18 @@ public class Health : MonoBehaviour
         if (health <= 0)
         {
             GameObject effect = Instantiate(effectgetDead, transform.position, Quaternion.identity);
-            Destroy(effect ,1);
-            SpawnManager.instance.enemys.Remove(gameObject);
+            Destroy(effect, 1);
             if (deadScore != 0)
             {
                 HubManager.instance.score += deadScore;
                 Debug.Log(HubManager.instance.score);
             }
             AudioManager.instance.PlaySFX("Enemy dead");
+
+            // Spawn child enemies
+            SpawnManager.instance.addEnemy(childFrefabs, 3, transform.position);
+
+            SpawnManager.instance.enemys.Remove(gameObject);
             Destroy(gameObject);
         }
     }

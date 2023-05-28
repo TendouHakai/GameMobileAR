@@ -28,13 +28,13 @@ public class PlayerHealth : Health
         }
     }
 
-    public void setHealth(int health)
+    public override void setHealth(int health)
     {
         this.health = health;
         healthBarSlider.value = this.health;
     }
 
-    public void TakeDamge()
+    public override void TakeDamge()
     {
         this.health--;
         healthBarSlider.value = this.health;

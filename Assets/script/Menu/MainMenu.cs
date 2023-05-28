@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        HubManager.instance.currentlevel = 1;
         SceneManager.LoadScene(1);
     }
 

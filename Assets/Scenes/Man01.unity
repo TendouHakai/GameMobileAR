@@ -1082,7 +1082,6 @@ MonoBehaviour:
   health: 100
   effectgetDamage: {fileID: 0}
   effectgetDead: {fileID: 0}
-  healthBar: {fileID: 0}
   deadScore: 0
   healthBarSlider: {fileID: 1636636544}
   gotHurtSCreen: {fileID: 1030964723}

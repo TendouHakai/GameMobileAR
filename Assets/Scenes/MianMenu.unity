@@ -1399,6 +1399,10 @@ PrefabInstance:
       propertyPath: currentlevel
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 770205992591779514, guid: 6a019da14d52ae848acaf8f3ff9e9155, type: 3}
+      propertyPath: Completedlevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 770205992591779515, guid: 6a019da14d52ae848acaf8f3ff9e9155, type: 3}
       propertyPath: m_RootOrder
       value: 4

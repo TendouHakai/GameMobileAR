@@ -20,11 +20,6 @@ public class SpawnManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
@@ -82,6 +77,7 @@ public class SpawnManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("Create enemys");
             foreach(EnemyInLevel go in currentLevel.enemyInLevels)
             {
                 for(int i = 0; i < go.count; i++)
@@ -115,10 +111,22 @@ public class SpawnManager : MonoBehaviour
                     boss.GetComponent<EnemyMovements>().TimeToAttack = 1.0f;
 
                     ScreenManager.instance.playScreen.transform.Find("heathbarBoss").gameObject.SetActive(true);
-                    boss.GetComponent<Health>().SetHealthBar(ScreenManager.instance.playScreen.transform.Find("heathbarBoss").GetComponent<Slider>());
+                    boss.GetComponent<BosHealth>().SetHealthBar(ScreenManager.instance.playScreen.transform.Find("heathbarBoss").GetComponent<Slider>());
                     enemys.Add(boss); 
                 }
             }
         }
+    }
+
+    public void addEnemy(GameObject frefabs, int count, Vector3 position)
+    {
+        for(int i =0; i < count; i++)
+        {
+            GameObject enemy = Instantiate(frefabs, position, Quaternion.identity);
+            enemy.GetComponent<EnemyMovements>().attackTarget = targetObject;
+            enemy.GetComponent<EnemyMovements>().TimeToAttack = UnityEngine.Random.Range(0.0f, 120.0f);
+
+            enemys.Add(enemy);
+        } 
     }
 }

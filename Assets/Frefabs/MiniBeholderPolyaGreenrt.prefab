@@ -394,10 +394,10 @@ GameObject:
   - component: {fileID: 6594399197893599731}
   - component: {fileID: 2406314643512414299}
   - component: {fileID: 3676713548376243927}
-  - component: {fileID: 8765619972468201867}
   - component: {fileID: 3960218442305370111}
+  - component: {fileID: 2228437118196620880}
   m_Layer: 7
-  m_Name: BeholderPolyaGreenrt 1
+  m_Name: MiniBeholderPolyaGreenrt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -412,12 +412,12 @@ Transform:
   m_GameObject: {fileID: 9011648103021171507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9011648103020875537}
   - {fileID: 9011648103020875533}
-  - {fileID: 3762781688294703245}
+  - {fileID: 5958126844787169982}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -486,7 +486,7 @@ MonoBehaviour:
   rb: {fileID: 6009629791449506759}
   GetCollider: {fileID: 6594399197893599731}
   ani: {fileID: 9011648103030661363}
-  movementSpeed: 0.8
+  movementSpeed: 1
   canMove: 1
   noFlipping: 0
   attackTarget: {fileID: 0}
@@ -505,7 +505,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79f4ec5b523b54a875da3d4f9eef8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8765619972468201867
+--- !u!114 &3960218442305370111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011648103021171507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2433eedefc770774296fec1d53f7a22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 9011648103026449971}
+  SlashColor: {r: 1, g: 0, b: 0, a: 0}
+  SlashTime: 0.25
+--- !u!114 &2228437118196620880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -522,21 +537,6 @@ MonoBehaviour:
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
   healthBar: {fileID: 0}
   deadScore: 5
---- !u!114 &3960218442305370111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9011648103021171507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2433eedefc770774296fec1d53f7a22b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  render: {fileID: 9011648103026449971}
-  SlashColor: {r: 1, g: 0, b: 0, a: 0}
-  SlashTime: 0.25
 --- !u!1 &9011648103021171509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,7 +1759,7 @@ Transform:
   m_Father: {fileID: 9011648103020875609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &9185746804296062484
+--- !u!1001 &1868367960022420519
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1772,15 +1772,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1826,14 +1826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: radarObject
       objectReference: {fileID: 0}
-    - target: {fileID: 6522553252654127131, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
---- !u!4 &3762781688294703245 stripped
+--- !u!4 &5958126844787169982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
-  m_PrefabInstance: {fileID: 9185746804296062484}
+  m_PrefabInstance: {fileID: 1868367960022420519}
   m_PrefabAsset: {fileID: 0}
