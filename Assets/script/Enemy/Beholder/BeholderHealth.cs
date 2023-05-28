@@ -22,7 +22,6 @@ public class BeholderHealth : Health
             if (deadScore != 0)
             {
                 HubManager.instance.score += deadScore;
-                Debug.Log(HubManager.instance.score);
             }
             AudioManager.instance.PlaySFX("Enemy dead");
 

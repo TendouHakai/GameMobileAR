@@ -20,12 +20,14 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        Debug.Log("Play new game");
         HubManager.instance.currentlevel = 1;
         SceneManager.LoadScene(1);
     }
 
     public void ResumeGame()
     {
+        Debug.Log("Resume game in level"+ HubManager.instance.Completedlevel);
         HubManager.instance.currentlevel = HubManager.instance.Completedlevel;
         SceneManager.LoadScene(1);
     }

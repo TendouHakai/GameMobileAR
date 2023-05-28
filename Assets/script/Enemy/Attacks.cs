@@ -67,7 +67,6 @@ public class Attacks : MonoBehaviour
 
         animator.SetTrigger(currentAttack.aniTrigger);
         StartCoroutine(currentAttack.AttackCD());
-        Debug.Log(currentAttack.aniTrigger);
     }
 
     public void AniTriggerAttack()

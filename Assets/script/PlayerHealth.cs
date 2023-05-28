@@ -8,6 +8,7 @@ public class PlayerHealth : Health
 {
     [SerializeField] public Slider healthBarSlider;
     public GameObject gotHurtSCreen;
+    private bool isDead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,9 +39,10 @@ public class PlayerHealth : Health
     {
         this.health--;
         healthBarSlider.value = this.health;
-        if(this.health<=0)
+        if(this.health<=0 && !isDead)
         {
             ScreenManager.instance.gameOver();
+            isDead = true;
             return;
         }
         AudioManager.instance.PlaySFX("Take Damage");

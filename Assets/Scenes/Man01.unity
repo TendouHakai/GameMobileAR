@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 298852041}
   - component: {fileID: 298852040}
   - component: {fileID: 298852039}
+  - component: {fileID: 298852046}
   m_Layer: 0
   m_Name: AR Default Plane
   m_TagString: Untagged
@@ -429,6 +430,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &298852046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298852038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520bb47c46cf8624fafb307b7d1b862a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Camera: {fileID: 0}
 --- !u!1 &399610041
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,6 +679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TextMeshPro: {fileID: 940267757}
+  isCurrentLevel: 1
 --- !u!1 &956865686
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TextMeshPro: {fileID: 1089552859}
+  isCurrentLevel: 1
 --- !u!114 &1089552859 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 600840704, guid: 2254c394a73659c42aa82d0c3e04b462, type: 3}
@@ -1079,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99981420c8c68648af68c9cbb19d18a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 10
   effectgetDamage: {fileID: 0}
   effectgetDead: {fileID: 0}
   deadScore: 0
@@ -1441,11 +1457,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ar cursor
       objectReference: {fileID: 0}
+    - target: {fileID: 3042020060862974098, guid: 03d56c9cc4787054dbe320fb86fffb93, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042020060862974099, guid: 03d56c9cc4787054dbe320fb86fffb93, type: 3}
+      propertyPath: PlaneManager
+      value: 
+      objectReference: {fileID: 758754732}
     - target: {fileID: 3042020060862974099, guid: 03d56c9cc4787054dbe320fb86fffb93, type: 3}
       propertyPath: RaycastManager
       value: 
       objectReference: {fileID: 758754731}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3042020060862974098, guid: 03d56c9cc4787054dbe320fb86fffb93, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 03d56c9cc4787054dbe320fb86fffb93, type: 3}
 --- !u!1001 &3409828600844048876
 PrefabInstance:
@@ -1768,7 +1793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].enemyInLevels.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[2].Boss.Array.data[0].count
@@ -1776,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[2].enemyInLevels.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[3].Boss.Array.data[0].count
@@ -1784,23 +1809,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[3].enemyInLevels.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[0].enemyInLevels.Array.data[0].count
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].enemyInLevels.Array.data[0].count
-      value: 1
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[1].enemyInLevels.Array.data[1].count
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[2].enemyInLevels.Array.data[0].count
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[1].count
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[2].count
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[3].enemyInLevels.Array.data[0].count
-      value: 1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[1].count
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[2].count
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].Boss.Array.data[0].gameObjectFrefabs
@@ -1819,13 +1864,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9011648103021171507, guid: 67be9baa64611cd4d85ca4141e685699, type: 3}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[1].enemyInLevels.Array.data[1].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 600711588305438015, guid: 54fdb2f1d0aacd346819e14e8c628c81, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[2].enemyInLevels.Array.data[0].gameObjectFrefabs
       value: 
       objectReference: {fileID: 6484462048823741210, guid: c148289923f706f49825438e0a323167, type: 3}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[1].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 600711588305438015, guid: 54fdb2f1d0aacd346819e14e8c628c81, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[2].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 9011648103021171507, guid: 67be9baa64611cd4d85ca4141e685699, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[3].enemyInLevels.Array.data[0].gameObjectFrefabs
       value: 
       objectReference: {fileID: 6484462048823741210, guid: c148289923f706f49825438e0a323167, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[1].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 600711588305438015, guid: 54fdb2f1d0aacd346819e14e8c628c81, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[2].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 9011648103021171507, guid: 67be9baa64611cd4d85ca4141e685699, type: 3}
     - target: {fileID: 9014589693776799726, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: m_Name
       value: Spawn Manager

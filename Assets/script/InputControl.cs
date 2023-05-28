@@ -59,7 +59,6 @@ public class InputControl : MonoBehaviour
 
     private void ShootAction(InputAction.CallbackContext context)
     {
-        Debug.Log("Shooting");
         if (isShoot && SpawnManager.instance.isInFight)
         {
             if (left)

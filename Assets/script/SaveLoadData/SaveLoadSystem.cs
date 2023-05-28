@@ -36,7 +36,7 @@ public class SaveLoadSystem : MonoBehaviour
         Debug.Log("Save data");
         GameData gameData = new GameData();
         gameData.CompletedLevel = HubManager.instance.Completedlevel;
-        gameData.highestScore = HubManager.instance.score;
+        gameData.highestScore = HubManager.instance.highestScore;
         gameData.MusicVolume = AudioManager.instance.musicSource.volume;
         gameData.SFXVolume = AudioManager.instance.sfxSource.volume;
 
@@ -48,11 +48,12 @@ public class SaveLoadSystem : MonoBehaviour
     {
         if(File.Exists(Application.dataPath + "/GameARdata.json"))
         {
+            Debug.Log("Load file data successfully" + Application.dataPath + "/GameARdata.json");
             string json = File.ReadAllText(Application.dataPath + "/GameARdata.json");
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
             HubManager.instance.Completedlevel = gameData.CompletedLevel;
-            HubManager.instance.score = gameData.highestScore;
+            HubManager.instance.highestScore = gameData.highestScore;
             AudioManager.instance.musicSource.volume = gameData.MusicVolume;
             AudioManager.instance.sfxSource.volume = gameData.SFXVolume;
         } 

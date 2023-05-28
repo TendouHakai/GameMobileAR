@@ -21,11 +21,6 @@ public class ScreenManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
@@ -33,19 +28,22 @@ public class ScreenManager : MonoBehaviour
     {
         playScreen.SetActive(true);
         warningScreen.SetActive(true);
+        playScreen.transform.Find("TapToPlacePortal").gameObject.SetActive(true);
         warningBossAppearScreen.SetActive(false);
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
 
-        if(HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
-        {
-            GameWin();
-        }
-        else
-        {
-            playScreen.GetComponent<PlayScene>().StartGame();
-        }
+            //if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
+            //{
+            //    GameWin();
+            //}
+            //else
+            //{
+            //    playScreen.GetComponent<PlayScene>().StartGame();
+            //}
+
+        //ResumeGame();
     }
 
     // Update is called once per frame
@@ -73,6 +71,7 @@ public class ScreenManager : MonoBehaviour
 
     public void gameOver()
     {
+        Debug.Log("Game over");
         gameOverScreen.SetActive(true);
         warningScreen.SetActive(false);
 
@@ -83,6 +82,7 @@ public class ScreenManager : MonoBehaviour
 
     public void GameWin()
     {
+        Debug.Log("Game win");
         gameWinScreen.SetActive(true);
         AudioManager.instance.PlaySFX("Win");
         HubManager.instance.updateHighestScore();
@@ -98,7 +98,11 @@ public class ScreenManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
-        playScreen.GetComponent<PlayScene>().StartGame();
+        if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
+        {
+            GameWin();
+        }
+        else playScreen.GetComponent<PlayScene>().StartGame();
     }
 
     public void LevelGameComplete()

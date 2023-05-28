@@ -24,7 +24,7 @@ public class PlayScene : MonoBehaviour
         {
             if (timeStart > 4.0f)
             {
-                if (goObject.active == true)
+                if (goObject.activeInHierarchy == true)
                 {
                     goObject.SetActive(false);
                     gunLeft.SetActive(true);
@@ -36,17 +36,17 @@ public class PlayScene : MonoBehaviour
             }
             else if(timeStart > 3.0f)
             {
-                if (goObject.active == false)
+                if (goObject.activeInHierarchy == false)
                     goObject.SetActive(true);
             }
             else if(timeStart > 2.5f)
             {
-                if(readyObject.active == true)
+                if(readyObject.activeInHierarchy == true)
                     readyObject.SetActive(false);
             }
             else if(timeStart>0.5f)
             {
-                if(readyObject.active == false)
+                if(readyObject.activeInHierarchy == false)
                     readyObject.SetActive(true);
             }
 
@@ -57,6 +57,7 @@ public class PlayScene : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("Start game");
         AudioManager.instance.PlayMusic("CombatMusic");
         isStarttingGame = true;
         timeStart = 0f;
@@ -71,6 +72,7 @@ public class PlayScene : MonoBehaviour
 
     public void StartGameNextLevel()
     {
+        Debug.Log("Start next level " + HubManager.instance.currentlevel);
         if (HubManager.instance.NextLevel())
         {
             isStarttingGame = true;

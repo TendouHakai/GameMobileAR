@@ -8,18 +8,23 @@ public class ARcursor : MonoBehaviour
     public GameObject Arcursor;
     public GameObject OjectPortal;
     public ARRaycastManager RaycastManager;
+    public ARPlaneManager PlaneManager;
 
     private bool isUseCursor = false;
     // Start is called before the first frame update
     void Start()
     {
         Arcursor.SetActive(isUseCursor);
+        foreach (var plane in PlaneManager.trackables)
+        {
+            plane.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isUseCursor)
+        if (isUseCursor)
         {
             updateCursor();
         }
@@ -27,11 +32,13 @@ public class ARcursor : MonoBehaviour
         if(Input.touchCount>0 && Input.GetTouch(0).phase == TouchPhase.Began) {
             if (isUseCursor)
             {
+                isUseCursor = false;
+                PlaneManager.enabled = false;
                 GameObject gameObject =  GameObject.Instantiate(OjectPortal, transform.position, transform.rotation);
                 SpawnManager.instance.spawnPosition = gameObject.transform;
                 ScreenManager.instance.ResumeGame();
-                gameObject.SetActive(false);
-                isUseCursor = false;
+                Debug.Log("Create portal successfully");
+                Arcursor.SetActive(false);
             }
         }
     }

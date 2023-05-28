@@ -14,10 +14,9 @@ public class fbsFlash : MonoBehaviour
     {
         while (true)
         {
-            switch (text.active)
+            switch (text.activeInHierarchy)
             {
                 case true:
-                    Debug.Log("Run this");
                     text.SetActive(false);
                     yield return new WaitForSeconds(0.5f);
                     break;

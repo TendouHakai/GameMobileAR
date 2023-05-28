@@ -28,7 +28,6 @@ public class BosHealth : Health
 
     public override void TakeDamge()
     {
-        Debug.Log("take Damge Boss");
         this.health--;
         if (healthBar != null)
         {
@@ -48,7 +47,6 @@ public class BosHealth : Health
             if (deadScore != 0)
             {
                 HubManager.instance.score += deadScore;
-                Debug.Log(HubManager.instance.score);
             }
             AudioManager.instance.PlaySFX("Enemy dead");
             SpawnManager.instance.enemys.Remove(gameObject);

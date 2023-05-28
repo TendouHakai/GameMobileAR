@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,16 @@ public class AudioSettingMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MusicSlider.value = AudioManager.instance.musicSource.volume;
-        SFXSlider.value = AudioManager.instance.sfxSource.volume;
+        try
+        {
+            MusicSlider.value = AudioManager.instance.musicSource.volume;
+            SFXSlider.value = AudioManager.instance.sfxSource.volume;
+            Debug.Log("Load audio settings sucessfully");
+        }
+        catch(Exception e)
+        {
+            Debug.Log(e);
+        }
     }
 
     // Update is called once per frame

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,14 +26,14 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(levels == null || levels.Length == 0)
-        {
-            Debug.Log("Not levels in game");
-        }    
-        else
-        {
-            Debug.Log("Loading level 01");
-        }
+        //if(levels == null || levels.Length == 0)
+        //{
+        //    Debug.Log("Not levels in game");
+        //}    
+        //else
+        //{
+        //    Debug.Log("Loading level 01");
+        //}
     }
 
     // Update is called once per frame
@@ -73,11 +74,10 @@ public class SpawnManager : MonoBehaviour
         Level currentLevel = Array.Find(levels, x=> x.level == level);
         if (currentLevel == null)
         {
-            Debug.Log("Not have Level "+ level);
+            UnityEngine.Debug.Log("Not have Level "+ level);
         }
         else
         {
-            Debug.Log("Create enemys");
             foreach(EnemyInLevel go in currentLevel.enemyInLevels)
             {
                 for(int i = 0; i < go.count; i++)
@@ -89,6 +89,7 @@ public class SpawnManager : MonoBehaviour
                     enemys.Add(enemy);
                 }
             }
+            UnityEngine.Debug.Log("Create enemies successfully in level " + HubManager.instance.currentlevel);
         }
     }
 
@@ -97,7 +98,7 @@ public class SpawnManager : MonoBehaviour
         Level currentLevel = Array.Find(levels, x => x.level == level);
         if (currentLevel == null)
         {
-            Debug.Log("Not have Level " + level);
+            UnityEngine.Debug.Log("Not have Level " + level);
         }
         else
         {
@@ -115,6 +116,7 @@ public class SpawnManager : MonoBehaviour
                     enemys.Add(boss); 
                 }
             }
+            UnityEngine.Debug.Log("Create Boss successfully in level " + HubManager.instance.currentlevel);
         }
     }
 

@@ -43,7 +43,6 @@ public class Health : MonoBehaviour
             if (deadScore != 0)
             {
                 HubManager.instance.score += deadScore;
-                Debug.Log(HubManager.instance.score);
             }
             AudioManager.instance.PlaySFX("Enemy dead");
             Destroy(gameObject);
