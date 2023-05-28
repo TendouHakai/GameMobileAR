@@ -15,14 +15,6 @@ public class PlayScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(HubManager.instance.currentlevel != HubManager.instance.Maxlevel)
-        {
-            StartGame();
-        }
-        else
-        {
-            ScreenManager.instance.GameWin();
-        }
     }
 
     // Update is called once per frame

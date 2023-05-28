@@ -11,6 +11,6 @@ public class BatAttacks01 : AttackSkill
     {
         GameObject projectile = Instantiate(AttackProjectile, shootPoint.position, Quaternion.identity);
         projectile.GetComponent<BatbulletMovement>().setAttackTarget(targetPosi.position);
-        Destroy(projectile, 3);
+        Destroy(projectile, 7);
     }
 }

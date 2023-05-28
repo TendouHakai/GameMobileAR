@@ -6,6 +6,7 @@ public class HubManager : MonoBehaviour
 {
     public static HubManager instance;
     public int currentlevel;
+    public int Completedlevel;
     public int Maxlevel;
     public int score;
 
@@ -34,10 +35,16 @@ public class HubManager : MonoBehaviour
 
     public bool NextLevel()
     {
-        if(currentlevel < Maxlevel)
+        if (currentlevel < Maxlevel)
         {
             currentlevel++;
             return true;
+        }
+        else currentlevel = Maxlevel + 1;
+
+        if(Completedlevel < currentlevel)
+        {
+            Completedlevel = currentlevel;
         }
         return false;
     }

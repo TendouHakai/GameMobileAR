@@ -23,6 +23,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void ResumeGame()
+    {
+        HubManager.instance.currentlevel = HubManager.instance.Completedlevel;
+        SceneManager.LoadScene(1);
+    }
+
     public void QuitGame()
     {
         Application.Quit();

@@ -37,6 +37,15 @@ public class ScreenManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
+
+        if(HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
+        {
+            GameWin();
+        }
+        else
+        {
+            playScreen.GetComponent<PlayScene>().StartGame();
+        }
     }
 
     // Update is called once per frame
@@ -66,13 +75,13 @@ public class ScreenManager : MonoBehaviour
     {
         gameOverScreen.SetActive(true);
         warningScreen.SetActive(false);
-        AudioManager.instance.PlaySFX("Win");
+        AudioManager.instance.PlaySFX("GameOver");
     }
 
     public void GameWin()
     {
         gameWinScreen.SetActive(true);
-        AudioManager.instance.PlaySFX("GameOver");  
+        AudioManager.instance.PlaySFX("Win");
     }
 
     public void ResumeGame()
