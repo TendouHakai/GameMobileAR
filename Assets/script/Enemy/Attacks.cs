@@ -9,7 +9,7 @@ public class Attacks : MonoBehaviour
     private Animator animator;
     private EnemyMovements movbeh;
 
-    [SerializeField] private Transform attackTarget;
+    [SerializeField] public Transform attackTarget;
     private AttackSkill currentAttack;
 
     private bool isAttacking;
@@ -18,10 +18,6 @@ public class Attacks : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        if (!animator)
-        {
-            animator = transform.GetChild(0).GetComponent<Animator>();
-        }
         movbeh = GetComponent<EnemyMovements>();
         isAttacking = false;
         GetListAttacks();

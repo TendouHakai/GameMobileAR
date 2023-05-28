@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 7982985227194485500}
   - component: {fileID: 7982985227194485501}
   - component: {fileID: 7982985227194485491}
+  - component: {fileID: 8707316340292592373}
+  - component: {fileID: 4399393065654493182}
   m_Layer: 0
   m_Name: BatBullet
   m_TagString: Untagged
@@ -148,7 +150,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &7982985227194485501
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -179,6 +181,35 @@ MonoBehaviour:
   movementSpeed: 1
   Range: 15
   attackTarget: {x: 0, y: 0, z: 0}
+--- !u!114 &8707316340292592373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646562107601434988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c0d4a4e9eddc14ea159ada0e1fb677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4399393065654493182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646562107601434988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae6cebcb208ac34d9f9707969823cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  effectgetDamage: {fileID: 0}
+  effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
+  healthBar: {fileID: 0}
+  deadScore: 2
 --- !u!1001 &8220734590347925534
 PrefabInstance:
   m_ObjectHideFlags: 0

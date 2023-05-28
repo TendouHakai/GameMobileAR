@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 6374675068916605814}
   - component: {fileID: 6374675068916605809}
   - component: {fileID: 5137632263396109929}
+  - component: {fileID: 8202914910900736578}
   m_Layer: 0
   m_Name: StoneMonster
   m_TagString: Untagged
@@ -141,6 +142,7 @@ MonoBehaviour:
   noFlipping: 0
   attackTarget: {fileID: 0}
   isAttack: 1
+  TimeToAttack: 0
   changeVelocityCount: 3
 --- !u!54 &6374675068916605814
 Rigidbody:
@@ -184,6 +186,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  effectgetDamage: {fileID: 8202914910900736578}
+  effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
+--- !u!114 &8202914910900736578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6484462048823741210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2433eedefc770774296fec1d53f7a22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 6345973609339726278}
+  SlashColor: {r: 1, g: 0, b: 0, a: 0}
+  SlashTime: 0
 --- !u!1 &6484536260621015980
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,21 +60,22 @@ public class InputControl : MonoBehaviour
     private void ShootAction(InputAction.CallbackContext context)
     {
         Debug.Log("Shooting");
-        if (isShoot)
+        if (isShoot && SpawnManager.instance.isInFight)
         {
             if (left)
             {
-                Debug.Log("left gun");
                 GUN_LEFT.GetComponentInChildren<Animator>().SetTrigger("Shoot");
                 GUN_LEFT.GetComponent<RaycastShoot>().Shoot();
+                AudioManager.instance.PlaySFX("Shoot");
                 StartCoroutine(ShootReLoad());
                 left = false;
             }
             else
             {
                 GUN_RIGHT.GetComponentInChildren<Animator>().SetTrigger("Shoot");
-                StartCoroutine(ShootReLoad());
                 GUN_RIGHT.GetComponent<RaycastShoot>().Shoot();
+                AudioManager.instance.PlaySFX("Shoot");
+                StartCoroutine(ShootReLoad());
                 left = true;
             }
         }

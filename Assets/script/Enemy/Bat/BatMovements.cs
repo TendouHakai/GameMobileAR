@@ -16,7 +16,6 @@ public class BatMovements : EnemyMovements
 
     public override void CombatMovement()
     {
-        Debug.Log("movement");
         NormalMovement();
     }
 

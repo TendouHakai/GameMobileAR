@@ -28,7 +28,9 @@ public class ARcursor : MonoBehaviour
             if (isUseCursor)
             {
                 GameObject gameObject =  GameObject.Instantiate(OjectPortal, transform.position, transform.rotation);
-                Destroy(gameObject, 2);
+                SpawnManager.instance.spawnPosition = gameObject.transform;
+                ScreenManager.instance.ResumeGame();
+                gameObject.SetActive(false);
                 isUseCursor = false;
             }
         }

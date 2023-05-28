@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 7806627975159927715}
   - component: {fileID: 1898721043844328531}
   - component: {fileID: 739592846076648336}
+  - component: {fileID: 2903561040228417512}
   m_Layer: 0
   m_Name: eyedude 1
   m_TagString: Untagged
@@ -978,6 +979,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 25
+  effectgetDamage: {fileID: 2903561040228417512}
+  effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
 --- !u!114 &8196699112611784737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,6 +1001,7 @@ MonoBehaviour:
   noFlipping: 0
   attackTarget: {fileID: 0}
   isAttack: 1
+  TimeToAttack: 0
   changeVelocityCount: 5
 --- !u!54 &7806627975159927715
 Rigidbody:
@@ -1042,6 +1046,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTarget: {fileID: 0}
+--- !u!114 &2903561040228417512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3368886530964366417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2433eedefc770774296fec1d53f7a22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  render: {fileID: 5566884236854231673}
+  SlashColor: {r: 1, g: 0, b: 0, a: 0}
+  SlashTime: 0
 --- !u!1 &3434994418547934523
 GameObject:
   m_ObjectHideFlags: 0

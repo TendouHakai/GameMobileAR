@@ -10,6 +10,7 @@ public class EnemyCollision : MonoBehaviour
         if(collisionInfo.collider.tag == "Player")
         {
             Debug.Log("Collision between Enemy and Player");
+            SpawnManager.instance.enemys.Remove(gameObject);
             Destroy(gameObject);
             collisionInfo.collider.GetComponent<PlayerHealth>().TakeDamge();
         }
@@ -17,7 +18,7 @@ public class EnemyCollision : MonoBehaviour
         if(collisionInfo.collider.tag == "Bullet")
         {
             Debug.Log("Collision between Enemy and Player Bullet");
-            Destroy(collisionInfo.collider);
+            Destroy(collisionInfo.collider.gameObject);
             gameObject.GetComponent<Health>().TakeDamge();
         }
     }  

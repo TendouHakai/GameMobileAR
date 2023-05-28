@@ -18,16 +18,29 @@ public abstract class EnemyMovements : MonoBehaviour
     protected Vector3 velocity;
     protected float timeStart;
 
+    public float TimeToAttack;
+    private float timeToAttackStart;
+
     // Start is called before the first frame update
     void Start()
     {
         velocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 1f).normalized * movementSpeed;
         isAttack = false;
+        timeToAttackStart = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {   
+        if(timeToAttackStart > TimeToAttack && !isAttack)
+        {
+            changeToAttack();   
+        }
+        else
+        {
+            timeToAttackStart += Time.deltaTime;
+        }
+
         if (canMove)
         {
             if (!isAttack)
@@ -42,7 +55,14 @@ public abstract class EnemyMovements : MonoBehaviour
             }
             else
             {
-                CombatMovement();
+                if (Vector3.Distance(transform.position, attackTarget.position) > 15)
+                {
+                    MoveInside();
+                }
+                else
+                {
+                    CombatMovement();
+                }
             }
             PerformMovement();
         }
@@ -51,7 +71,7 @@ public abstract class EnemyMovements : MonoBehaviour
 
     public abstract void NormalMovement();
     public abstract void CombatMovement();
-    void MoveInside()
+    public virtual void MoveInside()
     {
         Vector3 vector3 = -transform.position + attackTarget.position;
         float deltaX = vector3.x;
@@ -86,4 +106,10 @@ public abstract class EnemyMovements : MonoBehaviour
         this.velocity = velocity;
     }
 
+    void changeToAttack()
+    {
+        isAttack = true;
+        transform.Find("radarObject").GetChild(0).gameObject.SetActive(false);
+        transform.Find("radarObject").GetChild(1).gameObject.SetActive(true);
+    }
 }

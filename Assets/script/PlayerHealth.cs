@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -37,6 +38,12 @@ public class PlayerHealth : Health
     {
         this.health--;
         healthBarSlider.value = this.health;
+        if(this.health<=0)
+        {
+            ScreenManager.instance.gameOver();
+            return;
+        }
+        AudioManager.instance.PlaySFX("Take Damage");
         var color = gotHurtSCreen.GetComponent<Image>().color;
         color.a = 0.6f;
 

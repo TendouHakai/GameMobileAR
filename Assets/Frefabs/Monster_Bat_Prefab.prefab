@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5949446491849346070}
   - component: {fileID: 3054401794802205593}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3135225014174756193}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3137894696675433304}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3135225014914750037
 GameObject:
@@ -98,7 +98,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3135225014914750036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ Transform:
   - {fileID: 3135225015987485918}
   - {fileID: 5949446491849346070}
   m_Father: {fileID: 3137894696675433304}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3135225015987485919
 GameObject:
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3135225015987485918}
   - component: {fileID: 3135225015987485917}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackBoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasAni: 0
-  aniTrigger: 
+  aniTrigger: No trigger
   attackCD: 20
   attackDuration: 5
   readyToAttack: 1
@@ -189,7 +189,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3139715268817703450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3137913144916402056}
   - component: {fileID: 3056656188895418686}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3137894696675433304}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!137 &3056656188895418686
 SkinnedMeshRenderer:
@@ -308,7 +308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3138319733329761566}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3139703389755504828}
   - component: {fileID: 3135225014242180165}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ Transform:
   - {fileID: 3138319733329761566}
   - {fileID: 3139715268817703450}
   m_Father: {fileID: 3137894696675433304}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &3135225014242180165
 SphereCollider:
@@ -392,7 +392,8 @@ GameObject:
   - component: {fileID: 3135225015041123895}
   - component: {fileID: 3135225015041123893}
   - component: {fileID: 3795272394610862062}
-  m_Layer: 0
+  - component: {fileID: 381282703032433072}
+  m_Layer: 7
   m_Name: Monster_Bat_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,11 +412,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3065629332747386861}
   - {fileID: 3137913144916402056}
   - {fileID: 3139703389755504828}
   - {fileID: 3135225014914750036}
   - {fileID: 3135225014174756193}
-  - {fileID: 3065629332747386861}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -179.818, z: 0}
@@ -471,6 +472,7 @@ MonoBehaviour:
   noFlipping: 0
   attackTarget: {fileID: 0}
   isAttack: 1
+  TimeToAttack: 0
 --- !u!114 &3135225015041123895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +488,8 @@ MonoBehaviour:
   health: 20
   effectgetDamage: {fileID: 3795272394610862062}
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
+  healthBar: {fileID: 0}
+  deadScore: 100
 --- !u!114 &3135225015041123893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +518,18 @@ MonoBehaviour:
   render: {fileID: 3056656188895418686}
   SlashColor: {r: 1, g: 0, b: 0, a: 0}
   SlashTime: 0.25
+--- !u!114 &381282703032433072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136555565771923872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab79f4ec5b523b54a875da3d4f9eef8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7046180324345473396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,9 +537,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3137894696675433304}
     m_Modifications:
+    - target: {fileID: 440259901293766177, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308528613926743513, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalPosition.x
@@ -568,6 +592,10 @@ PrefabInstance:
     - target: {fileID: 6522553252654127131, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_Name
       value: radarObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6522553252654127131, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
