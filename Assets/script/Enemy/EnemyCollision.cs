@@ -11,7 +11,10 @@ public class EnemyCollision : MonoBehaviour
         {
             Debug.Log("Collision between Enemy and Player");
             SpawnManager.instance.enemys.Remove(gameObject);
-            Destroy(gameObject);
+            if (transform.tag == "Enemy")
+            {
+                Destroy(gameObject);
+            }
             collisionInfo.collider.GetComponent<PlayerHealth>().TakeDamge();
         }
 

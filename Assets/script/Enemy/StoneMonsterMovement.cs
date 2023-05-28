@@ -23,7 +23,13 @@ public class StoneMonsterMovement : EnemyMovements
 
     public override void CombatMovement()
     {
-        NormalMovement();
+        Vector3 vector3 = -transform.position + attackTarget.position;
+        float deltaX = vector3.x;
+        float deltaY = vector3.y - 1.0f;
+        float deltaZ = vector3.z;
+
+        float max = Mathf.Max(Mathf.Abs(deltaX), Mathf.Abs(deltaY), Mathf.Abs(deltaZ));
+        velocity = new Vector3(deltaX / max, deltaY / max, deltaZ / max).normalized * movementSpeed;
     }
 
 }

@@ -118,13 +118,13 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    public void addEnemy(GameObject frefabs, int count, Vector3 position)
+    public void addEnemy(GameObject frefabs, int count, Vector3 position, float timeAttackMin = 0f, float timeAttackMax = 120f)
     {
         for(int i =0; i < count; i++)
         {
             GameObject enemy = Instantiate(frefabs, position, Quaternion.identity);
             enemy.GetComponent<EnemyMovements>().attackTarget = targetObject;
-            enemy.GetComponent<EnemyMovements>().TimeToAttack = UnityEngine.Random.Range(0.0f, 120.0f);
+            enemy.GetComponent<EnemyMovements>().TimeToAttack = UnityEngine.Random.Range(timeAttackMin, timeAttackMax);
 
             enemys.Add(enemy);
         } 

@@ -28,4 +28,11 @@ public class EyeBatMovement : EnemyMovements
         NormalMovement();
     }
 
+    public override void PerformMovement()
+    {
+        transform.LookAt(attackTarget);
+        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+    }
+
 }

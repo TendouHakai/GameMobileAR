@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 8656830949728804639}
   m_Layer: 7
   m_Name: Monster_Bat_Prefab
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,7 +467,7 @@ MonoBehaviour:
   rb: {fileID: 3135225015041123894}
   GetCollider: {fileID: 3135225014242180165}
   ani: {fileID: 0}
-  movementSpeed: 0.2
+  movementSpeed: 0.4
   canMove: 1
   noFlipping: 0
   attackTarget: {fileID: 0}
@@ -525,7 +525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 234b812994d38414c92947ec8c27ee32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 25
+  health: 35
   effectgetDamage: {fileID: 3795272394610862062}
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
   deadScore: 100

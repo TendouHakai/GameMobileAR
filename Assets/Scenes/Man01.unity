@@ -1669,10 +1669,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4575162270703944211, guid: 0b948a7f80bfbac40b5f6f84735ead22, type: 3}
-      propertyPath: m_Volume
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b948a7f80bfbac40b5f6f84735ead22, type: 3}
 --- !u!1001 &4757640697034767112
@@ -1797,14 +1793,30 @@ PrefabInstance:
       objectReference: {fileID: 988204468}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].level
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].Boss.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].Boss.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].Boss.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
@@ -1816,6 +1828,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].Boss.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].Boss.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[0].enemyInLevels.Array.data[0].count
       value: 1
       objectReference: {fileID: 0}
@@ -1824,13 +1852,37 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[0].count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].Boss.Array.data[0].gameObjectFrefabs
       value: 
       objectReference: {fileID: 3136555565771923872, guid: e7a3f877ae339dc44b7d48d212cee1e4, type: 3}
     - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].Boss.Array.data[0].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 3368886530964366417, guid: 83cb16147cc43a64fb71822768ebcc75, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].Boss.Array.data[0].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 3368886530964366417, guid: bb37841dbe62e4549bf993efc8e0012b, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: levels.Array.data[1].enemyInLevels.Array.data[0].gameObjectFrefabs
       value: 
       objectReference: {fileID: 9011648103021171507, guid: 67be9baa64611cd4d85ca4141e685699, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[2].enemyInLevels.Array.data[0].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 6484462048823741210, guid: c148289923f706f49825438e0a323167, type: 3}
+    - target: {fileID: 8908631696152219678, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
+      propertyPath: levels.Array.data[3].enemyInLevels.Array.data[0].gameObjectFrefabs
+      value: 
+      objectReference: {fileID: 6484462048823741210, guid: c148289923f706f49825438e0a323167, type: 3}
     - target: {fileID: 9014589693776799726, guid: be6195560704e9c4bacc8eaa1e3cba21, type: 3}
       propertyPath: m_Name
       value: Spawn Manager

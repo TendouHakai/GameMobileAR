@@ -98,6 +98,7 @@ public class ScreenManager : MonoBehaviour
 
     public void LevelGameComplete()
     {
+        Debug.Log("Complete level " + HubManager.instance.currentlevel.ToString());
         levelCompleteScreen.SetActive(true);
         isComplettingLevel = true;
         timeStart = 0f;
@@ -105,6 +106,7 @@ public class ScreenManager : MonoBehaviour
 
     public IEnumerator BossAppear()
     {
+        Debug.Log("Boss Appear in level "+ HubManager.instance.currentlevel.ToString());
         yield return new WaitForSeconds(1.5f);
         warningBossAppearScreen.SetActive(true);
         IsBossAppearing = true;

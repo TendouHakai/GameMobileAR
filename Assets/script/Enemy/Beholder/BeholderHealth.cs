@@ -27,7 +27,7 @@ public class BeholderHealth : Health
             AudioManager.instance.PlaySFX("Enemy dead");
 
             // Spawn child enemies
-            SpawnManager.instance.addEnemy(childFrefabs, 3, transform.position);
+            SpawnManager.instance.addEnemy(childFrefabs, 3, transform.position, 0f, 30f);
 
             SpawnManager.instance.enemys.Remove(gameObject);
             Destroy(gameObject);

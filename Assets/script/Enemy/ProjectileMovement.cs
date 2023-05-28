@@ -14,6 +14,7 @@ public class ProjectileMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        transform.LookAt(transform.position + movDirection * Time.fixedDeltaTime * moveSpeed);
         transform.position += movDirection * Time.fixedDeltaTime * moveSpeed;
     }
 }

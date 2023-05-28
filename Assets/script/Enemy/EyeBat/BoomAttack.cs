@@ -9,10 +9,13 @@ public class BoomAttack : AttackSkill
     [SerializeField] private int numEnemy;
     public override void ExcuteAttack(Transform targetPosi)
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 15; i++)
         {
             Vector3 dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
             GameObject projectile = Instantiate(AttackProjectile, transform.position + dir * 5.0f, Quaternion.identity);
+            projectile.GetComponent<EnemyMovements>().attackTarget = targetPosi;
+            projectile.GetComponent<EnemyMovements>().TimeToAttack = Random.Range(0f, 30f);
+            Destroy(projectile, 10);
         }
     }
 

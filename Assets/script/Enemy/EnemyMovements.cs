@@ -24,7 +24,7 @@ public abstract class EnemyMovements : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector3(Random.Range(-1f, 3f), Random.Range(-1f, 1f), 1f).normalized * movementSpeed;
+        velocity = new Vector3(Random.Range(-1f, 5f), Random.Range(-1f, 1f), 1f).normalized * movementSpeed;
         isAttack = false;
         timeToAttackStart = 0f;
     }

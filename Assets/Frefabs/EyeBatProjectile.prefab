@@ -78,9 +78,10 @@ GameObject:
   - component: {fileID: 5137632263396109929}
   - component: {fileID: 5326640989852625141}
   - component: {fileID: 5435502393200280196}
-  m_Layer: 0
+  - component: {fileID: 1243766236921571499}
+  m_Layer: 7
   m_Name: EyeBatProjectile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,9 +164,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae6cebcb208ac34d9f9707969823cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 2
   effectgetDamage: {fileID: 5435502393200280196}
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
+  deadScore: 15
 --- !u!114 &5326640989852625141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +196,18 @@ MonoBehaviour:
   render: {fileID: 6345973609339726278}
   SlashColor: {r: 1, g: 0, b: 0, a: 0}
   SlashTime: 0
+--- !u!114 &1243766236921571499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6484462048823741210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab79f4ec5b523b54a875da3d4f9eef8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6484536260621015980
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,7 +329,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6484946267815553710}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
