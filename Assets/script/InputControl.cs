@@ -59,6 +59,11 @@ public class InputControl : MonoBehaviour
 
     private void ShootAction(InputAction.CallbackContext context)
     {
+        if(ARcursor.instance.isUseCursor)
+        {
+            ARcursor.instance.placeThePortal();
+        }
+
         if (isShoot && SpawnManager.instance.isInFight)
         {
             if (left)

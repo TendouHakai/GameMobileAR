@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MianMenu.unity
     guid: 29d6f9da84c9c7a4b84345e72f1dfece
-  - enabled: 0
-    path: Assets/Scenes/Play 1.unity
-    guid: fa452239ff5b83740bab8bb76db3e4b7
-  - enabled: 0
-    path: Assets/Scenes/Play.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Man01.unity
     guid: e6c8cd5dbecc70547b6692ef20926955

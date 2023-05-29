@@ -901,6 +901,7 @@ MonoBehaviour:
   Arcursor: {fileID: 834764167}
   OjectPortal: {fileID: 8646619201190964735, guid: 2a4171751d4db1b488ec558068af17e8, type: 3}
   RaycastManager: {fileID: 1765870352}
+  PlaneManager: {fileID: 0}
 --- !u!4 &834764170
 Transform:
   m_ObjectHideFlags: 0
@@ -2445,6 +2446,7 @@ MonoBehaviour:
   noFlipping: 0
   attackTarget: {fileID: 110479296}
   isAttack: 0
+  TimeToAttack: 0
   ChildObject: {fileID: 0}
 --- !u!135 &1402898627
 SphereCollider:
