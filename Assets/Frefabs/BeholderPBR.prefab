@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600711588305437987}
   m_LocalRotation: {x: -0.2823171, y: 0.6483032, z: -0.2823171, w: 0.6483032}
-  m_LocalPosition: {x: -0, y: 1.2518948, z: -0.18880452}
+  m_LocalPosition: {x: -0, y: 0, z: -0.18880452}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -676,7 +676,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.45
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &1700290364044191686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,13 +692,12 @@ MonoBehaviour:
   rb: {fileID: 5590396441942225725}
   GetCollider: {fileID: 5396664898702223911}
   ani: {fileID: 600711588314969853}
-  movementSpeed: 0.6
+  movementSpeed: 1
   canMove: 1
   noFlipping: 0
   attackTarget: {fileID: 0}
   isAttack: 0
   TimeToAttack: 0
-  ChildObject: {fileID: 0}
 --- !u!114 &4010155690131414427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae6cebcb208ac34d9f9707969823cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 6
+  health: 5
   effectgetDamage: {fileID: 626649954193206744}
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
   deadScore: 15
@@ -741,7 +740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   render: {fileID: 600711588310714429}
   SlashColor: {r: 1, g: 0, b: 0, a: 0}
-  SlashTime: 0.25
+  SlashTime: 0.15
 --- !u!1 &600711588305438017
 GameObject:
   m_ObjectHideFlags: 0

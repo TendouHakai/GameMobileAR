@@ -313,7 +313,7 @@ MonoBehaviour:
   rb: {fileID: 3135225015041123894}
   GetCollider: {fileID: 3135225014242180165}
   ani: {fileID: 0}
-  movementSpeed: 1.5
+  movementSpeed: 2
   canMove: 1
   noFlipping: 0
   attackTarget: {fileID: 0}

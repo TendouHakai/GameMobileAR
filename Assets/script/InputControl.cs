@@ -11,7 +11,7 @@ public class InputControl : MonoBehaviour
     public GameObject GUN_LEFT;
     public GameObject GUN_RIGHT;
 
-    float TimeRate = 0.15f;
+    public float TimeRate = 0.15f;
     bool left ;
     bool isShoot;
 

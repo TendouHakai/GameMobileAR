@@ -34,14 +34,14 @@ public class ScreenManager : MonoBehaviour
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
 
-            //if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
-            //{
-            //    GameWin();
-            //}
-            //else
-            //{
-            //    playScreen.GetComponent<PlayScene>().StartGame();
-            //}
+        //if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
+        //{
+        //    GameWin();
+        //}
+        //else
+        //{
+        //    playScreen.GetComponent<PlayScene>().StartGame();
+        //}
 
         //ResumeGame();
     }
@@ -72,6 +72,8 @@ public class ScreenManager : MonoBehaviour
     public void gameOver()
     {
         Debug.Log("Game over");
+        SpawnManager.instance.isInFight = false;
+
         gameOverScreen.SetActive(true);
         warningScreen.SetActive(false);
 
@@ -83,7 +85,10 @@ public class ScreenManager : MonoBehaviour
     public void GameWin()
     {
         Debug.Log("Game win");
+        SpawnManager.instance.isInFight = false;
+
         gameWinScreen.SetActive(true);
+
         AudioManager.instance.PlaySFX("Win");
         HubManager.instance.updateHighestScore();
         SaveLoadSystem.instance.SaveData();

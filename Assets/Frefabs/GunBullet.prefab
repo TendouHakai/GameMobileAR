@@ -65,8 +65,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6390223519787529437}
   GetCollider: {fileID: 0}
-  movementSpeed: 7
-  Range: 20
+  movementSpeed: 20
+  Range: 15
   attackTarget: {x: 0, y: 0, z: 0}
 --- !u!135 &1876066334
 SphereCollider:

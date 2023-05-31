@@ -26,5 +26,6 @@ public class GameOverMenu : MonoBehaviour
     {
         AudioManager.instance.StopMusic();
         SceneManager.LoadScene(0);
+        SaveLoadSystem.instance.SendScore();
     }
 }

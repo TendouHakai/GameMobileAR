@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8996209f3756edd4aa8a73a26871dce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 6
 --- !u!114 &5435502393200280196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   render: {fileID: 6345973609339726278}
   SlashColor: {r: 1, g: 0, b: 0, a: 0}
-  SlashTime: 0
+  SlashTime: 0.15
 --- !u!114 &1243766236921571499
 MonoBehaviour:
   m_ObjectHideFlags: 0

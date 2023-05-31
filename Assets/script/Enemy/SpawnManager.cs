@@ -39,16 +39,6 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(timeStart>3f && iscreateEnemy)
-        //{
-        //    createEnemies(1);
-        //    iscreateEnemy = false;
-        //}    
-        //else
-        //{
-        //    timeStart += Time.deltaTime;
-        //}
-
         if(isInFight)
         {
             if (enemys.Count <= 0)

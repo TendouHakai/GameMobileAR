@@ -22,7 +22,6 @@ public class SaveLoadSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadData();
     }
 
     // Update is called once per frame
@@ -35,6 +34,7 @@ public class SaveLoadSystem : MonoBehaviour
     {
         Debug.Log("Save data");
         GameData gameData = new GameData();
+        gameData.name = HubManager.instance.GameName;
         gameData.CompletedLevel = HubManager.instance.Completedlevel;
         gameData.highestScore = HubManager.instance.highestScore;
         gameData.MusicVolume = AudioManager.instance.musicSource.volume;
@@ -44,7 +44,7 @@ public class SaveLoadSystem : MonoBehaviour
         File.WriteAllText(Application.dataPath + "/GameARdata.json", json);
     }
 
-    public void LoadData()
+    public bool LoadData()
     {
         if(File.Exists(Application.dataPath + "/GameARdata.json"))
         {
@@ -52,14 +52,22 @@ public class SaveLoadSystem : MonoBehaviour
             string json = File.ReadAllText(Application.dataPath + "/GameARdata.json");
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
+            HubManager.instance.GameName = gameData.name;   
             HubManager.instance.Completedlevel = gameData.CompletedLevel;
             HubManager.instance.highestScore = gameData.highestScore;
             AudioManager.instance.musicSource.volume = gameData.MusicVolume;
             AudioManager.instance.sfxSource.volume = gameData.SFXVolume;
+            return true;
         } 
         else
         {
             Debug.Log("Not found file data "+ Application.dataPath + "/GameARdata.json");
+            return false;
         }
+    }
+
+    public void SendScore()
+    {
+        HighScores.UploadScore("Thành", HubManager.instance.highestScore);
     }
 }

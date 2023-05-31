@@ -5,6 +5,7 @@ using UnityEngine;
 public class HubManager : MonoBehaviour
 {
     public static HubManager instance;
+    public string GameName;
     public int currentlevel;
     public int Completedlevel;
     public int Maxlevel;

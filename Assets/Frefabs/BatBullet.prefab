@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7982985227194485500}
   GetCollider: {fileID: 7982985227194485501}
-  movementSpeed: 1
+  movementSpeed: 4
   Range: 15
   attackTarget: {x: 0, y: 0, z: 0}
 --- !u!114 &8707316340292592373
@@ -205,10 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae6cebcb208ac34d9f9707969823cab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 6
   effectgetDamage: {fileID: 0}
   effectgetDead: {fileID: 7698810231040483968, guid: dfdb369b633082f47808756cdb71a41c, type: 3}
-  healthBar: {fileID: 0}
   deadScore: 2
 --- !u!1001 &8220734590347925534
 PrefabInstance:

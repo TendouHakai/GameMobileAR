@@ -983,7 +983,7 @@ MonoBehaviour:
   rb: {fileID: 7806627975159927715}
   GetCollider: {fileID: 1898721043844328531}
   ani: {fileID: 4488209848626882282}
-  movementSpeed: 0.5
+  movementSpeed: 1.5
   canMove: 1
   noFlipping: 0
   attackTarget: {fileID: 0}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   render: {fileID: 5566884236854231673}
   SlashColor: {r: 1, g: 0.17433158, b: 0, a: 0}
-  SlashTime: 0.25
+  SlashTime: 0.15
 --- !u!114 &7699863364812891621
 MonoBehaviour:
   m_ObjectHideFlags: 0
