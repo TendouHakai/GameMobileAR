@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunDamage: 1
-  weaponRange: 20
+  weaponRange: 15
   hitForce: 100
   shootPoint: {fileID: 1328821448}
   GunBullet: {fileID: 1987156431701405970, guid: 05d05bfff0da8cf458bf10916b336750, type: 3}

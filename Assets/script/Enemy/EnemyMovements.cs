@@ -12,6 +12,7 @@ public abstract class EnemyMovements : MonoBehaviour
     [SerializeField] public float movementSpeed;    
     [SerializeField] protected bool canMove;
     [SerializeField] protected bool noFlipping;
+    [SerializeField] protected float yRange;
 
     public Transform attackTarget;
     public bool isAttack;
@@ -24,7 +25,7 @@ public abstract class EnemyMovements : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector3(Random.Range(-1f, 5f), 1f, Random.Range(-1f, 1f)).normalized * movementSpeed;
+        velocity = new Vector3(Random.Range(-2f, 2f), 4f, Random.Range(-2f, 2f)).normalized * movementSpeed;
         isAttack = false;
         timeToAttackStart = 0f;
     }
@@ -43,9 +44,10 @@ public abstract class EnemyMovements : MonoBehaviour
 
         if (canMove)
         {
+            Debug.Log(transform.position.y - attackTarget.position.y);
             if (!isAttack)
             {
-                if (Vector3.Distance(transform.position, attackTarget.position) > 15)
+                if (Vector3.Distance(transform.position, attackTarget.position) > 12)
                 {
                     MoveInside();
                 }
@@ -55,7 +57,7 @@ public abstract class EnemyMovements : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, attackTarget.position) > 15)
+                if (Vector3.Distance(transform.position, attackTarget.position) > 12)
                 {
                     MoveInside();
                 }
@@ -64,6 +66,10 @@ public abstract class EnemyMovements : MonoBehaviour
                     CombatMovement();
                 }
             }
+            if (transform.position.y - attackTarget.position.y >= yRange)
+                velocity.y = -Mathf.Abs(velocity.y);
+            else if (transform.position.y - attackTarget.position.y <= -yRange)
+                velocity.y = Mathf.Abs(velocity.y);
             PerformMovement();
         }
         

@@ -52,16 +52,23 @@ public class ARcursor : MonoBehaviour
             transform.position = hits[0].pose.position;
             transform.rotation = hits[0].pose.rotation;
         }
+
+        
     }
 
     public void placeThePortal()
     {
         isUseCursor = false;
         PlaneManager.enabled = false;
+        foreach (var plane in PlaneManager.trackables)
+        {
+            plane.gameObject.SetActive(false);
+        }
         GameObject gameObject = Instantiate(OjectPortal, transform.position, transform.rotation);
         SpawnManager.instance.spawnPosition = gameObject.transform;
         ScreenManager.instance.ResumeGame();
         Debug.Log("Create portal successfully");
         Arcursor.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

@@ -11,7 +11,7 @@ public class InputControl : MonoBehaviour
     public GameObject GUN_LEFT;
     public GameObject GUN_RIGHT;
 
-    public float TimeRate = 0.15f;
+    public float TimeRate;
     bool left ;
     bool isShoot;
 
@@ -63,29 +63,30 @@ public class InputControl : MonoBehaviour
         {
             ARcursor.instance.placeThePortal();
         }
-
+        
         if (isShoot && SpawnManager.instance.isInFight)
         {
+            Debug.Log("Shoot");
             if (left)
             {
-                GUN_LEFT.GetComponentInChildren<Animator>().SetTrigger("Shoot");
+                GUN_LEFT.GetComponent<GunRecoil>().recoil();
                 GUN_LEFT.GetComponent<RaycastShoot>().Shoot();
                 AudioManager.instance.PlaySFX("Shoot");
-                StartCoroutine(ShootReLoad());
+                StartCoroutine(ShootReLoad(true));
                 left = false;
             }
             else
             {
-                GUN_RIGHT.GetComponentInChildren<Animator>().SetTrigger("Shoot");
+                GUN_RIGHT.GetComponent<GunRecoil>().recoil();
                 GUN_RIGHT.GetComponent<RaycastShoot>().Shoot();
                 AudioManager.instance.PlaySFX("Shoot");
-                StartCoroutine(ShootReLoad());
+                StartCoroutine(ShootReLoad(false));
                 left = true;
             }
         }
     }
 
-    private IEnumerator ShootReLoad()
+    private IEnumerator ShootReLoad(bool isLeft)
     {
         isShoot = false;
         yield return TimeRate;

@@ -17,10 +17,11 @@ public class UIControl : MonoBehaviour
         AudioSettingMenu.SetActive(false);
         HighScoreRank.SetActive(false);
         EnterNameMenu.SetActive(false);
+
+        SaveLoadSystem.instance.LoadPath();
         if (!SaveLoadSystem.instance.LoadData())
         {
             ComeEnterNameMenu();
-
         }
     }
 
@@ -34,6 +35,7 @@ public class UIControl : MonoBehaviour
         MainMenu.SetActive(true);
         AudioSettingMenu.SetActive(false);
         HighScoreRank.SetActive(false);
+        EnterNameMenu.SetActive(false);
     }
 
     public void ComeAudioSettingMenu()
@@ -56,14 +58,23 @@ public class UIControl : MonoBehaviour
 
     public void EnterTheName()
     {
-        if (EnterNameMenu.GetComponentInChildren<TMP_InputField>().text.Length <= 10)
+        try
         {
-            SaveLoadSystem.instance.SaveData();
-            backMainMenu();
+            EnterNameMenu.transform.Find("ERROR").GetComponent<TextMeshProUGUI>().text = EnterNameMenu.GetComponentInChildren<TMP_InputField>().text;
+            if (EnterNameMenu.GetComponentInChildren<TMP_InputField>().text.Length <= 10)
+            {
+                HubManager.instance.GameName = EnterNameMenu.GetComponentInChildren<TMP_InputField>().text;
+                SaveLoadSystem.instance.SaveData();
+                backMainMenu();
+            }
+            else
+            {
+                EnterNameMenu.transform.Find("ERROR").gameObject.SetActive(true);
+            }
         }
-        else
+        catch(System.Exception e)
         {
-            Debug.Log("Run");
+            EnterNameMenu.transform.Find("ERROR").GetComponent<TextMeshProUGUI>().text += e.Message;
             EnterNameMenu.transform.Find("ERROR").gameObject.SetActive(true);
         }
     }

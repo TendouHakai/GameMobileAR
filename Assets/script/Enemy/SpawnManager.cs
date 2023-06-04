@@ -121,4 +121,13 @@ public class SpawnManager : MonoBehaviour
             enemys.Add(enemy);
         } 
     }
+
+    public void Clear()
+    {
+        foreach(GameObject game in enemys)
+        {
+            Destroy(game);  
+        }
+        enemys.Clear();
+    }
 }

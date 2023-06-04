@@ -16,12 +16,10 @@ public class HighScores : MonoBehaviour
     {
         if(instance == null)
         {
-            instance = this; //Sets Static Instance
+            instance = this; //Sets Static Instance  
         }
 
         myDisplay = GetComponent<DisplayHighscores>();
-
-        SaveLoadSystem.instance.SendScore();
     }
     
     public static void UploadScore(string username, int score)  //CALLED when Uploading new Score to WEBSITE

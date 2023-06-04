@@ -20,10 +20,12 @@ public class RaycastShoot : MonoBehaviour
     public void Shoot()
     {
         Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+        Debug.Log("shoot gun");
 
         RaycastHit hit;
         if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
         {
+            Debug.Log("create bullet");
             GameObject bullet = GameObject.Instantiate(GunBullet, shootPoint.position, Quaternion.identity);
             //GameObject bullet = GameObject.Instantiate(GunBullet, hit.point, Quaternion.identity);
 

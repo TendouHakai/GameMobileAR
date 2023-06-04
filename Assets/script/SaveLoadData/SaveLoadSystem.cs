@@ -6,6 +6,7 @@ using System.IO;
 public class SaveLoadSystem : MonoBehaviour
 {
     public static SaveLoadSystem instance;
+    string path;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class SaveLoadSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        path = Path.Combine(Application.persistentDataPath , "data.json");
     }
 
     // Update is called once per frame
@@ -41,15 +43,16 @@ public class SaveLoadSystem : MonoBehaviour
         gameData.SFXVolume = AudioManager.instance.sfxSource.volume;
 
         string json = JsonUtility.ToJson(gameData, true);
-        File.WriteAllText(Application.dataPath + "/GameARdata.json", json);
+        File.WriteAllText(path, json);
     }
 
     public bool LoadData()
     {
-        if(File.Exists(Application.dataPath + "/GameARdata.json"))
+        Debug.Log(path);
+        if (File.Exists(path))
         {
-            Debug.Log("Load file data successfully" + Application.dataPath + "/GameARdata.json");
-            string json = File.ReadAllText(Application.dataPath + "/GameARdata.json");
+            Debug.Log("Load file data successfully" + path);
+            string json = File.ReadAllText(path);
             GameData gameData = JsonUtility.FromJson<GameData>(json);
 
             HubManager.instance.GameName = gameData.name;   
@@ -61,13 +64,18 @@ public class SaveLoadSystem : MonoBehaviour
         } 
         else
         {
-            Debug.Log("Not found file data "+ Application.dataPath + "/GameARdata.json");
+            Debug.Log("Not found file data "+ path);
             return false;
         }
     }
 
     public void SendScore()
     {
-        HighScores.UploadScore("Thành", HubManager.instance.highestScore);
+        HighScores.UploadScore(HubManager.instance.GameName, HubManager.instance.highestScore);
+    }
+
+    public void LoadPath()
+    {
+        path = Path.Combine(Application.persistentDataPath, "data.json");
     }
 }

@@ -33,17 +33,6 @@ public class ScreenManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
-
-        //if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
-        //{
-        //    GameWin();
-        //}
-        //else
-        //{
-        //    playScreen.GetComponent<PlayScene>().StartGame();
-        //}
-
-        //ResumeGame();
     }
 
     // Update is called once per frame
@@ -103,11 +92,18 @@ public class ScreenManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         gameWinScreen.SetActive(false);
         levelCompleteScreen.SetActive(false);
+
         if (HubManager.instance.currentlevel > HubManager.instance.Maxlevel)
         {
             GameWin();
         }
-        else playScreen.GetComponent<PlayScene>().StartGame();
+        else
+        {
+            SpawnManager.instance.Clear();
+            PlayerHealth.instance.Resume();
+            HubManager.instance.score = 0;
+            playScreen.GetComponent<PlayScene>().StartGame();
+        }
     }
 
     public void LevelGameComplete()
@@ -119,6 +115,7 @@ public class ScreenManager : MonoBehaviour
         timeStart = 0f;
 
         HubManager.instance.updateCompletedLevel();
+        HubManager.instance.updateHighestScore();
         SaveLoadSystem.instance.SaveData();
     }
 

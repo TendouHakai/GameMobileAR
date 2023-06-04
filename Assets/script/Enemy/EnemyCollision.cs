@@ -7,7 +7,7 @@ public class EnemyCollision : MonoBehaviour
 {
     public void OnCollisionEnter(Collision collisionInfo)
     {
-        if(collisionInfo.collider.tag == "Player")
+        if (collisionInfo.collider.tag == "Player")
         {
             SpawnManager.instance.enemys.Remove(gameObject);
             if (transform.tag == "Enemy")
@@ -16,21 +16,28 @@ public class EnemyCollision : MonoBehaviour
             }
             collisionInfo.collider.GetComponent<PlayerHealth>().TakeDamge();
         }
-
-        if(collisionInfo.collider.tag == "Bullet")
+        else if (collisionInfo.collider.tag == "Bullet")
         {
             Destroy(collisionInfo.collider.gameObject);
             gameObject.GetComponent<Health>().TakeDamge();
         }
-    }  
-    
+    }
+
     public void OnCollisionStay(Collision collisionInfo)
     {
-
+        if (collisionInfo.collider.tag == "Bullet")
+        {
+            Destroy(collisionInfo.collider.gameObject);
+            gameObject.GetComponent<Health>().TakeDamge();
+        }
     }
 
     public void OnCollisionExit(Collision collisionInfo)
     {
-
+        if (collisionInfo.collider.tag == "Bullet")
+        {
+            Destroy(collisionInfo.collider.gameObject);
+            gameObject.GetComponent<Health>().TakeDamge();
+        }
     }
 }

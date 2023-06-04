@@ -58,6 +58,7 @@ public class HubManager : MonoBehaviour
         if(highestScore < score)
         {
             highestScore = score;
+            SaveLoadSystem.instance.SendScore();
         }
     }
 }

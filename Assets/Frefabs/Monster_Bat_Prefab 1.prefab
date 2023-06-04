@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAni: 0
   aniTrigger: 
-  attackCD: 7
-  attackDuration: 1
+  attackCD: 10
+  attackDuration: 5
   readyToAttack: 1
   startWithCD: 0
   haveRange: 0
@@ -409,7 +409,7 @@ Transform:
   m_GameObject: {fileID: 3136555565771923872}
   m_LocalRotation: {x: 0, y: -0.99999875, z: 0, w: 0.0015883772}
   m_LocalPosition: {x: 1.58, y: 0.03221011, z: 11.204218}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3137913144916402056}
@@ -451,7 +451,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3135225015041123880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,6 +470,7 @@ MonoBehaviour:
   movementSpeed: 0.4
   canMove: 1
   noFlipping: 0
+  yRange: 3
   attackTarget: {fileID: 0}
   isAttack: 1
   TimeToAttack: 0
@@ -551,15 +552,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.67
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.67
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.67
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5422969531496240793, guid: 9571da7d090ee3b40aea31eee4120965, type: 3}
       propertyPath: m_LocalPosition.x

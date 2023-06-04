@@ -6,9 +6,18 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Health
 {
+    public static PlayerHealth instance;
     [SerializeField] public Slider healthBarSlider;
     public GameObject gotHurtSCreen;
     private bool isDead = false;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +47,7 @@ public class PlayerHealth : Health
     public override void TakeDamge()
     {
         this.health--;
+        Debug.Log("Player health: " + this.health);
         healthBarSlider.value = this.health;
         if(this.health<=0 && !isDead)
         {
@@ -50,6 +60,13 @@ public class PlayerHealth : Health
         color.a = 0.6f;
 
         gotHurtSCreen.GetComponent<Image>().color = color;
+    }
+
+    public void Resume()
+    {
+        this.health = (int)healthBarSlider.maxValue;
+        healthBarSlider.value = this.health;
+        isDead = false;
     }
 
 }
