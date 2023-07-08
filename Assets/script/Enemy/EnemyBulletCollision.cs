@@ -8,13 +8,11 @@ public class EnemyBulletCollision : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Player")
         {
-            Debug.Log("collission bullet enemy with player");
             collisionInfo.collider.GetComponent<PlayerHealth>().TakeDamge();
             Destroy(this.gameObject);
         }
         else if (collisionInfo.collider.tag == "Bullet")
         {
-            Debug.Log("collission bullet enemy with bullet");
             Destroy(collisionInfo.collider.gameObject);
             gameObject.GetComponent<Health>().TakeDamge();
         }

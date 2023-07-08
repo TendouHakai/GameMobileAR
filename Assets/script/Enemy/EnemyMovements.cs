@@ -44,7 +44,6 @@ public abstract class EnemyMovements : MonoBehaviour
 
         if (canMove)
         {
-            Debug.Log(transform.position.y - attackTarget.position.y);
             if (!isAttack)
             {
                 if (Vector3.Distance(transform.position, attackTarget.position) > 12)

@@ -66,7 +66,6 @@ public class InputControl : MonoBehaviour
         
         if (isShoot && SpawnManager.instance.isInFight)
         {
-            Debug.Log("Shoot");
             if (left)
             {
                 GUN_LEFT.GetComponent<GunRecoil>().recoil();
