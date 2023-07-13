@@ -117,6 +117,7 @@ public class ScreenManager : MonoBehaviour
         HubManager.instance.updateCompletedLevel();
         HubManager.instance.updateHighestScore();
         SaveLoadSystem.instance.SaveData();
+        PlayerHealth.instance.resetHP();
     }
 
     public IEnumerator BossAppear()

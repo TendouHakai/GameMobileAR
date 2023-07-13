@@ -64,6 +64,11 @@ public class PlayerHealth : Health
 
     public void Resume()
     {
+        resetHP();
+    }
+
+    public void resetHP()
+    {
         this.health = (int)healthBarSlider.maxValue;
         healthBarSlider.value = this.health;
         isDead = false;
