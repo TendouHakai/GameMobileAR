@@ -25,7 +25,8 @@ public abstract class EnemyMovements : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector3(Random.Range(-2f, 2f), 4f, Random.Range(-2f, 2f)).normalized * movementSpeed;
+        timeStart = 2.0f;
+        velocity = new Vector3(Random.Range(-2f, 2f), 8.0f, Random.Range(-2f, 2f)).normalized * movementSpeed;
         isAttack = false;
         timeToAttackStart = 0f;
     }
@@ -46,7 +47,7 @@ public abstract class EnemyMovements : MonoBehaviour
         {
             if (!isAttack)
             {
-                if (Vector3.Distance(transform.position, attackTarget.position) > 12)
+                if (Vector3.Distance(transform.position, attackTarget.position) > 10)
                 {
                     MoveInside();
                 }
@@ -56,7 +57,7 @@ public abstract class EnemyMovements : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, attackTarget.position) > 12)
+                if (Vector3.Distance(transform.position, attackTarget.position) > 10)
                 {
                     MoveInside();
                 }
