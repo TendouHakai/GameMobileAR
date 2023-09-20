@@ -14,6 +14,9 @@
 - Ứng dụng được lập trình với Công cụ Unity engine và ngôn ngữ C#
 - Thư viện hỗ trợ:
       - Ar_core
-# Backend và Database
 # Hướng dẫn cài đặt
+- Bước 1: Truy cập vào link gg Play [tại đây](https://play.google.com/store/apps/details?id=com.DefaultCompany.gunar&)
+- Bước 2: Tải game về
+- Bước 3: Thưởng thức game
 # Demo
+Xem full video [tại đây](https://youtu.be/l6n9TetyQBk)
